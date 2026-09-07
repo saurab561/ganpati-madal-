@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>दक्ष नगरीचा राजा | गणेश मित्र मंडळ</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,"Noto Sans Devanagari",sans-serif;
+    background:#fff8ef;
+    color:#32180d;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:linear-gradient(135deg,#780000,#d84315,#ff9800);
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+
+.logo{
+    width:110px;
+    height:110px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid white;
+    background:white;
+}
+
+header h1{
+    margin-top:12px;
+    font-size:29px;
+}
+
+header p{
+    margin-top:6px;
+    font-size:18px;
+}
+
+/* ================= NAV ================= */
+
+nav{
+    background:#4b0000;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+nav button{
+    border:0;
+    outline:0;
+    background:transparent;
+    color:white;
+    padding:14px 17px;
+    font-size:15px;
+    cursor:pointer;
+}
+
+nav button:hover,
+nav button.active{
+    background:#e65100;
+}
+
+/* ================= PAGE ================= */
+
+.page{
+    display:none;
+    max-width:1050px;
+    margin:auto;
+    padding:40px 18px;
+    min-height:70vh;
+}
+
+.page.active{
+    display:block;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    text-align:center;
+    padding:55px 10px;
+}
+
+.hero h2{
+    font-size:38px;
+    color:#a51c00;
+}
+
+.hero p{
+    max-width:750px;
+    margin:18px auto;
+    font-size:18px;
+    line-height:1.7;
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+    border:0;
+    outline:0;
+    background:#d84315;
+    color:white;
+    padding:12px 20px;
+    margin:6px;
+    border-radius:9px;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.btn:hover{
+    opacity:.85;
+}
+
+.green{
+    background:#168a36;
+}
+
+.dark{
+    background:#333;
+}
+
+.red{
+    background:#b71c1c;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    margin:20px 0;
+    box-shadow:0 5px 20px rgba(0,0,0,.10);
+}
+
+.card h2{
+    color:#a51c00;
+    margin-bottom:15px;
+}
+
+/* ================= GRID ================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:18px;
+}
+
+.box{
+    background:#fff1df;
+    padding:22px;
+    text-align:center;
+    border-radius:14px;
+    border:1px solid #ffd2a3;
+}
+
+.box .emoji{
+    font-size:35px;
+    margin-bottom:8px;
+}
+
+/* ================= PROGRAM ================= */
+
+.program{
+    background:#fff4e4;
+    border-left:5px solid #e65100;
+    padding:18px;
+    margin:12px 0;
+    border-radius:8px;
+}
+
+.program h3{
+    color:#a51c00;
+    margin-bottom:6px;
+}
+
+/* ================= FORM ================= */
+
+.form{
+    max-width:650px;
+    margin:20px auto;
+}
+
+label{
+    display:block;
+    margin-top:14px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:13px;
+    margin-top:6px;
+    border:1px solid #bbb;
+    border-radius:8px;
+    font-size:16px;
+}
+
+input:focus{
+    outline:none;
+    border-color:#e65100;
+}
+
+/* ================= RECEIPT ================= */
+
+#receipt{
+    display:none;
+}
+
+.receipt{
+    max-width:650px;
+    margin:25px auto;
+    background:white;
+    border:3px solid #a51c00;
+    border-radius:15px;
+    padding:25px;
+}
+
+.receipt-logo{
+    width:80px;
+    height:80px;
+    display:block;
+    margin:auto;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.receipt h2{
+    text-align:center;
+    color:#a51c00;
+    margin-top:10px;
+}
+
+.receipt-center{
+    text-align:center;
+    line-height:1.7;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    padding:10px 0;
+    border-bottom:1px solid #eee;
+}
+
+.row span:last-child,
+.row b{
+    text-align:right;
+}
+
+.receipt-total{
+    font-size:21px;
+    color:#a51c00;
+    font-weight:bold;
+}
+
+/* ================= ADMIN ================= */
+
+.admin{
+    max-width:600px;
+    margin:auto;
+}
+
+#adminPanel{
+    display:none;
+}
+
+.collection-box{
+    background:linear-gradient(135deg,#780000,#d84315);
+    color:white;
+    padding:25px;
+    text-align:center;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.collection-box h3{
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.collection-box strong{
+    font-size:32px;
+}
+
+.history{
+    background:#fff4e4;
+    border-left:5px solid #e65100;
+    border-radius:8px;
+    padding:17px;
+    margin:15px 0;
+}
+
+.history-number{
+    color:#a51c00;
+    font-weight:bold;
+    font-size:17px;
+}
+
+/* ================= LOGIN ERROR ================= */
+
+#loginError{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#3d0000;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer p{
+    margin:6px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    header{
+        padding:20px 10px;
+    }
+
+    header h1{
+        font-size:21px;
+    }
+
+    header p{
+        font-size:15px;
+    }
+
+    .logo{
+        width:90px;
+        height:90px;
+    }
+
+    nav button{
+        font-size:12px;
+        padding:11px 8px;
+    }
+
+    .hero{
+        padding:40px 5px;
+    }
+
+    .hero h2{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .row{
+        font-size:14px;
+    }
+
+    .btn{
+        font-size:14px;
+        padding:11px 15px;
+    }
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    body *{
+        visibility:hidden;
+    }
+
+    #receipt,
+    #receipt *{
+        visibility:visible;
+    }
+
+    #receipt{
+        display:block !important;
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+    }
+
+    .receipt{
+        border:2px solid black;
+        box-shadow:none;
+        margin:0 auto;
+    }
+
+    .receipt button{
+        display:none;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<header>
+
+    <img
+        src="group-logo.png"
+        class="logo"
+        alt="मंडळाचा लोगो"
+    >
+
+    <h1>🙏 दक्ष नगरीचा राजा 🙏</h1>
+
+    <p>गणेश मित्र मंडळ, लासूरगांव</p>
+
+</header>
+
+
+<!-- ==================================================
+     NAVIGATION
+================================================== -->
+
+<nav>
+
+    <button
+        class="active"
+        onclick="showPage('home',this)">
+        🏠 मुख्यपृष्ठ
+    </button>
+
+    <button
+        onclick="showPage('about',this)">
+        📜 मंडळ
+    </button>
+
+    <button
+        onclick="showPage('program',this)">
+        📅 कार्यक्रम
+    </button>
+
+    <button
+        onclick="showPage('vargani',this)">
+        🧾 वर्गणी नोंदवा
+    </button>
+
+    <button
+        onclick="showPage('gallery',this)">
+        📸 Gallery
+    </button>
+
+    <button
+        onclick="showPage('contact',this)">
+        📞 Contact
+    </button>
+
+    <button
+        onclick="showPage('admin',this)">
+        🔐 Admin
+    </button>
+
+</nav>
+
+
+<!-- ==================================================
+     HOME
+================================================== -->
+
+<section id="home" class="page active">
+
+    <div class="hero">
+
+        <h2>गणपती बाप्पा मोरया! 🚩</h2>
+
+        <p>
+            दक्ष नगरीचा राजा गणेश मित्र मंडळ,
+            लासूरगांव यांच्या अधिकृत वेबसाइटवर
+            आपले मनःपूर्वक स्वागत.
+        </p>
+
+        <button
+            class="btn"
+            onclick="showPage('vargani')">
+            🧾 वर्गणी नोंदवा
+        </button>
+
+        <button
+            class="btn"
+            onclick="showPage('program')">
+            📅 कार्यक्रम पहा
+        </button>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>🌺 मंडळाबद्दल</h2>
+
+        <p style="line-height:1.8;">
+
+            गणेशोत्सव हा श्रद्धा, भक्ती,
+            एकता आणि आनंदाचा उत्सव आहे.
+            सर्वांच्या सहकार्याने गणेशोत्सव
+            उत्साहात साजरा करण्याचा आमचा प्रयत्न आहे.
+
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+        <div class="box">
+
+            <div class="emoji">🙏</div>
+
+            <h3>श्रद्धा</h3>
+
+            <p>श्री गणेशाची भक्ती.</p>
+
+        </div>
+
+
+        <div class="box">
+
+            <div class="emoji">🤝</div>
+
+            <h3>एकता</h3>
+
+            <p>सर्वांनी एकत्र येणे.</p>
+
+        </div>
+
+
+        <div class="box">
+
+            <div class="emoji">🌺</div>
+
+            <h3>समाजसेवा</h3>
+
+            <p>समाजोपयोगी उपक्रम.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     ABOUT
+================================================== -->
+
+<section id="about" class="page">
+
+    <div class="card">
+
+        <h2>📜 मंडळाची माहिती</h2>
+
+        <p>
+            <b>मंडळाचे नाव:</b>
+            दक्ष नगरीचा राजा गणेश मित्र मंडळ
+        </p>
+
+        <br>
+
+        <p>
+            <b>गाव:</b>
+            लासूरगांव
+        </p>
+
+        <br>
+
+        <p style="line-height:1.8;">
+
+            धार्मिक, सामाजिक आणि सांस्कृतिक
+            उपक्रमांच्या माध्यमातून गणेशोत्सव
+            उत्साहात साजरा करणे हा मंडळाचा उद्देश आहे.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     PROGRAM
+================================================== -->
+
+<section id="program" class="page">
+
+    <div class="card">
+
+        <h2>📅 कार्यक्रम</h2>
+
+
+        <div class="program">
+
+            <h3>🪔 गणेश स्थापना</h3>
+
+            <p>
+                गणरायाची विधीपूर्वक स्थापना.
+            </p>
+
+        </div>
+
+
+        <div class="program">
+
+            <h3>🙏 महाआरती</h3>
+
+            <p>
+                भक्तिमय वातावरणात महाआरती.
+            </p>
+
+        </div>
+
+
+        <div class="program">
+
+            <h3>🎵 सांस्कृतिक कार्यक्रम</h3>
+
+            <p>
+                विविध सांस्कृतिक कार्यक्रम.
+            </p>
+
+        </div>
+
+
+        <div class="program">
+
+            <h3>🚩 गणेश विसर्जन</h3>
+
+            <p>
+                भक्तिमय वातावरणात विसर्जन मिरवणूक.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     OFFLINE VARGANI
+================================================== -->
+
+<section id="vargani" class="page">
+
+    <div class="card form">
+
+        <h2>🧾 ऑफलाइन वर्गणी नोंदणी</h2>
+
+        <p style="line-height:1.7;">
+
+            वर्गणी प्रत्यक्ष जमा केल्यानंतर
+            खालील माहिती भरा आणि पावती तयार करा.
+
+        </p>
+
+
+        <label for="donorName">
+            पूर्ण नाव
+        </label>
+
+        <input
+            id="donorName"
+            type="text"
+            placeholder="तुमचे पूर्ण नाव"
+            autocomplete="name"
+        >
+
+
+        <label for="donorMobile">
+            मोबाईल नंबर
+        </label>
+
+        <input
+            id="donorMobile"
+            type="tel"
+            maxlength="10"
+            inputmode="numeric"
+            placeholder="10 अंकी मोबाईल नंबर"
+            autocomplete="tel"
+        >
+
+
+        <label for="donorAmount">
+            वर्गणी रक्कम ₹
+        </label>
+
+        <input
+            id="donorAmount"
+            type="number"
+            min="1"
+            step="1"
+            placeholder="उदा. 501"
+        >
+
+
+        <label for="collector">
+            वर्गणी घेणाऱ्याचे नाव
+        </label>
+
+        <input
+            id="collector"
+            type="text"
+            placeholder="वर्गणी घेणाऱ्याचे नाव"
+        >
+
+
+        <br>
+
+        <button
+            class="btn"
+            onclick="createReceipt()">
+            🧾 पावती तयार करा
+        </button>
+
+    </div>
+
+
+    <!-- RECEIPT -->
+
+    <div id="receipt">
+
+        <div class="receipt">
+
+            <img
+                src="group-logo.png"
+                class="receipt-logo"
+                alt="मंडळाचा लोगो"
+            >
+
+            <h2>वर्गणी पावती</h2>
+
+
+            <p class="receipt-center">
+
+                <b>दक्ष नगरीचा राजा</b>
+                <br>
+                गणेश मित्र मंडळ, लासूरगांव
+
+            </p>
+
+            <br>
+
+            <hr>
+
+            <br>
+
+
+            <div class="row">
+
+                <span>पावती नं.</span>
+
+                <b id="receiptNo"></b>
+
+            </div>
+
+
+            <div class="row">
+
+                <span>दिनांक</span>
+
+                <b id="receiptDate"></b>
+
+            </div>
+
+
+            <div class="row">
+
+                <span>नाव</span>
+
+                <b id="receiptName"></b>
+
+            </div>
+
+
+            <div class="row">
+
+                <span>मोबाईल</span>
+
+                <b id="receiptMobile"></b>
+
+            </div>
+
+
+            <div class="row">
+
+                <span>वर्गणी घेणारे</span>
+
+                <b id="receiptCollector"></b>
+
+            </div>
+
+
+            <div class="row receipt-total">
+
+                <span>रक्कम</span>
+
+                <span>
+                    ₹<span id="receiptAmount"></span>
+                </span>
+
+            </div>
+
+
+            <br>
+
+
+            <p class="receipt-center">
+
+                🙏 वर्गणीबद्दल धन्यवाद! 🙏
+                <br>
+
+                गणपती बाप्पा मोरया! 🚩
+
+            </p>
+
+
+            <div
+                style="
+                text-align:center;
+                margin-top:20px;
+                "
+            >
+
+                <button
+                    class="btn dark"
+                    onclick="printReceipt()">
+                    🖨️ Print / PDF
+                </button>
+
+
+                <button
+                    class="btn green"
+                    onclick="sendCurrentWhatsApp()">
+                    📱 WhatsApp
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     GALLERY
+================================================== -->
+
+<section id="gallery" class="page">
+
+    <div class="card">
+
+        <h2>📸 Gallery</h2>
+
+        <div class="grid">
+
+
+            <div class="box">
+
+                <div class="emoji">🙏</div>
+
+                <h3>गणेश स्थापना</h3>
+
+            </div>
+
+
+            <div class="box">
+
+                <div class="emoji">🪔</div>
+
+                <h3>महाआरती</h3>
+
+            </div>
+
+
+            <div class="box">
+
+                <div class="emoji">🎵</div>
+
+                <h3>सांस्कृतिक कार्यक्रम</h3>
+
+            </div>
+
+
+            <div class="box">
+
+                <div class="emoji">🚩</div>
+
+                <h3>विसर्जन</h3>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     CONTACT
+================================================== -->
+
+<section id="contact" class="page">
+
+    <div class="card">
+
+        <h2>📞 संपर्क</h2>
+
+        <p>
+            <b>दक्ष नगरीचा राजा गणेश मित्र मंडळ</b>
+        </p>
+
+        <br>
+
+        <p>
+            📍 लासूरगांव
+        </p>
+
+        <br>
+
+        <p>
+            🙏 गणपती बाप्पा मोरया! 🚩
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     ADMIN
+================================================== -->
+
+<section id="admin" class="page">
+
+    <!-- LOGIN -->
+
+    <div
+        id="loginBox"
+        class="card admin"
+    >
+
+        <h2>🔐 Admin Login</h2>
+
+        <label for="adminPin">
+            Admin PIN
+        </label>
+
+        <input
+            id="adminPin"
+            type="password"
+            inputmode="numeric"
+            placeholder="Enter Admin PIN"
+        >
+
+        <button
+            class="btn"
+            onclick="adminLogin()">
+            🔐 Login
+        </button>
+
+        <p id="loginError"></p>
+
+    </div>
+
+
+    <!-- ADMIN PANEL -->
+
+    <div id="adminPanel">
+
+        <div class="collection-box">
+
+            <h3>एकूण जमा वर्गणी</h3>
+
+            ₹<strong id="totalCollection">0</strong>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>📋 वर्गणी History</h2>
+
+            <div id="historyList"></div>
+
+
+            <button
+                class="btn red"
+                onclick="clearHistory()">
+                🗑️ सर्व History Delete
+            </button>
+
+
+            <button
+                class="btn dark"
+                onclick="logoutAdmin()">
+                🚪 Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer>
+
+    <p>🙏 गणपती बाप्पा मोरया! 🙏</p>
+
+    <p>
+        दक्ष नगरीचा राजा गणेश मित्र मंडळ
+    </p>
+
+    <p>
+        लासूरगांव 🚩
+    </p>
+
+    <p>
+        © 2026
+    </p>
+
+</footer>
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script>
+
+/* ==========================================
+   GLOBAL
+========================================== */
+
+var currentDonation = null;
+
+
+/* ==========================================
+   PAGE CHANGE
+========================================== */
+
+function showPage(pageId, clickedButton){
+
+    var pages =
+        document.querySelectorAll(".page");
+
+    for(var i = 0; i < pages.length; i++){
+
+        pages[i].classList.remove("active");
+
+    }
+
+
+    var page =
+        document.getElementById(pageId);
+
+
+    if(page){
+
+        page.classList.add("active");
+
+    }
+
+
+    var navButtons =
+        document.querySelectorAll("nav button");
+
+
+    for(var j = 0; j < navButtons.length; j++){
+
+        navButtons[j].classList.remove("active");
+
+    }
+
+
+    if(clickedButton){
+
+        clickedButton.classList.add("active");
+
+    }
+
+
+    window.scrollTo(0,0);
+}
+
+
+/* ==========================================
+   RECEIPT NUMBER
+   START: 20260001
+========================================== */
+
+function getReceiptNumber(){
+
+    var last =
+        localStorage.getItem("lastReceipt");
+
+
+    var number =
+        parseInt(last,10);
+
+
+    if(
+        isNaN(number) ||
+        number < 20260001
+    ){
+
+        number = 20260001;
+
+    }
+
+
+    localStorage.setItem(
+        "lastReceipt",
+        String(number + 1)
+    );
+
+
+    return String(number);
+}
+
+
+/* ==========================================
+   CREATE RECEIPT
+========================================== */
+
+function createReceipt(){
+
+    var nameElement =
+        document.getElementById("donorName");
+
+
+    var mobileElement =
+        document.getElementById("donorMobile");
+
+
+    var amountElement =
+        document.getElementById("donorAmount");
+
+
+    var collectorElement =
+        document.getElementById("collector");
+
+
+    if(
+        !nameElement ||
+        !mobileElement ||
+        !amountElement ||
+        !collectorElement
+    ){
+
+        alert(
+            "Form load झालेला नाही. Page पुन्हा open करा."
+        );
+
+        return;
+    }
+
+
+    var name =
+        nameElement.value.trim();
+
+
+    var mobile =
+        mobileElement.value.trim();
+
+
+    var amount =
+        amountElement.value.trim();
+
+
+    var collector =
+        collectorElement.value.trim();
+
+
+    if(name === ""){
+
+        alert("कृपया पूर्ण नाव भरा.");
+
+        nameElement.focus();
+
+        return;
+    }
+
+
+    if(!/^[0-9]{10}$/.test(mobile)){
+
+        alert(
+            "कृपया 10 अंकी मोबाईल नंबर भरा."
+        );
+
+        mobileElement.focus();
+
+        return;
+    }
+
+
+    if(
+        amount === "" ||
+        Number(amount) <= 0
+    ){
+
+        alert(
+            "कृपया योग्य वर्गणी रक्कम भरा."
+        );
+
+        amountElement.focus();
+
+        return;
+    }
+
+
+    if(collector === ""){
+
+        alert(
+            "कृपया वर्गणी घेणाऱ्याचे नाव भरा."
+        );
+
+        collectorElement.focus();
+
+        return;
+    }
+
+
+    var receiptNumber =
+        getReceiptNumber();
+
+
+    var date =
+        new Date().toLocaleDateString("en-IN");
+
+
+    currentDonation = {
+
+        receipt:receiptNumber,
+
+        name:name,
+
+        mobile:mobile,
+
+        amount:Number(amount),
+
+        collect
